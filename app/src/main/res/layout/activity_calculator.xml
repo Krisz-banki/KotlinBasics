@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".MainActivity"
+android:gravity="center_horizontal"
+android:padding="16dp">
+
+
+<ImageView
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@android:drawable/ic_dialog_dialer"
+    android:layout_marginBottom="64dp"
+    android:layout_marginTop="64dp" />
+
+<EditText
+    android:id="@+id/firstNumber"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/edit_text"
+    android:hint="Első szám"
+    android:layout_marginBottom="16dp" />
+
+<EditText
+    android:id="@+id/secondNumber"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/edit_text"
+    android:hint="Második szám"
+    android:layout_marginBottom="16dp" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:layout_marginBottom="20dp">
+
+    <Button
+        android:id="@+id/sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Összeadás"
+        android:layout_marginEnd="2dp"/>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Törlés"
+        android:layout_marginEnd="2dp"/>
+</LinearLayout>
+<TextView
+    android:id="@+id/result"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Eredmény: -"
+    android:textSize="24sp"
+    android:textStyle="bold" />
+
+
+
+</LinearLayout>
