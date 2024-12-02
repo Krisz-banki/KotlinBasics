@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class WeatherActivity : AppCompatActivity() {
-
+//komment
     private lateinit var textviewTemp: TextView
     private val apiKey = "0db176500d087d078df1c33397cc1aa0"
 
