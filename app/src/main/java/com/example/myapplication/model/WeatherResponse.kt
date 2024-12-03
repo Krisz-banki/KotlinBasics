@@ -5,5 +5,6 @@ data class WeatherResponse(
 )
 
 data class Main(
-    val temp: Float
+    val temp: Float,
+    val feels_like: Float
 )

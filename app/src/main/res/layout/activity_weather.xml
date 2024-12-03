@@ -15,5 +15,13 @@
         android:textSize="20sp"
         android:gravity="center"
         />
+    <TextView
+        android:id="@+id/textview_tempmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A minimum hőmérséklet: "
+        android:textSize="20sp"
+        android:gravity="center"
+        />
 
 </LinearLayout>

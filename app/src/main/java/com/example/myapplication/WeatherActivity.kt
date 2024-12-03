@@ -16,6 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class WeatherActivity : AppCompatActivity() {
 //komment
     private lateinit var textviewTemp: TextView
+    private lateinit var textviewTempmin: TextView
     private val apiKey = "0db176500d087d078df1c33397cc1aa0"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,7 @@ class WeatherActivity : AppCompatActivity() {
         setContentView(R.layout.activity_weather)
 
         textviewTemp = findViewById(R.id.textview_temp)
+        textviewTempmin = findViewById(R.id.textview_tempmin)
         fetchWeatherData()
     }
 
@@ -47,6 +49,8 @@ class WeatherActivity : AppCompatActivity() {
                     if(weatherResponse != null){
                         val weatherInfo = weatherResponse.main.temp
                         textviewTemp.text = weatherInfo.toString()
+                        val weatherInfoMin = weatherResponse.main.feels_like
+                        textviewTempmin.text = weatherInfoMin.toString()
                     }
                 }
             }
