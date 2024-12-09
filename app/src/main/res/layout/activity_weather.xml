@@ -6,7 +6,31 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".WeatherActivity">
-
+    <EditText
+        android:id="@+id/EditTextCity"
+        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adj meg egy várost"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:inputType="text"
+        android:background="@android:drawable/edit_text"/>
+    <Button
+        android:id="@+id/weatherButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="Köszönts!"
+        android:layout_marginBottom="24dp"/>
+    <TextView
+        android:id="@+id/resultTextView"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"/>
     <TextView
         android:id="@+id/textview_temp"
         android:layout_width="match_parent"
@@ -20,6 +44,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="A minimum hőmérséklet: "
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/textview_humidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pára tartalom: "
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/textview_windSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A szélsebessége: "
         android:textSize="20sp"
         android:gravity="center"
         />
