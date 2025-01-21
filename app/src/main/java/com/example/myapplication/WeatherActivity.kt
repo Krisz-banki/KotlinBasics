@@ -49,12 +49,13 @@ class WeatherActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Adj meg egy várost!", Toast.LENGTH_SHORT).show()
             }
+            fetchWeatherData(getCity)
+
         }
 
-        fetchWeatherData()
     }
 
-    private fun fetchWeatherData(){
+    private fun fetchWeatherData(varos: String){
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org")
             .addConverterFactory(GsonConverterFactory.create())
@@ -62,7 +63,7 @@ class WeatherActivity : AppCompatActivity() {
 
         val weatherService = retrofit.create(WeatherService::class.java)
 
-        val call = weatherService.getWeather(getCity,"metric", apiKey)
+        val call = weatherService.getWeather(varos,"metric", apiKey)
 
         call.enqueue(object: Callback<WeatherResponse> {
             override fun onResponse(
@@ -73,13 +74,14 @@ class WeatherActivity : AppCompatActivity() {
                     val weatherResponse = response.body()
                     if(weatherResponse != null){
                         val weatherInfo = weatherResponse.main.temp
-                        textviewTemp.text = weatherInfo.toString()
+                        textviewTemp.text = weatherInfo.toString()+"°C"
                         val weatherInfoMin = weatherResponse.main.feels_like
-                        textviewTempmin.text = weatherInfoMin.toString()
+                        textviewTempmin.text = weatherInfoMin.toString()+"°C"
                         val weatherInfoHumidity = weatherResponse.main.humidity
-                        textviewHumidity.text = weatherInfoHumidity.toString()
+                        textviewHumidity.text = weatherInfoHumidity.toString() + "%"
                         val weatherInfoWindSpeed = weatherResponse.wind.speed
-                        textviewWindSpeed.text = weatherInfoWindSpeed.toString()
+                        textviewWindSpeed.text = weatherInfoWindSpeed.toString() +" km/h"
+                        resultTextView.text = getCity
                     }
                 }
             }
