@@ -26,7 +26,7 @@ class RandomUserListActivity  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random_users)
-
+        fetchRandomUserList()
 
 //        val recyclerView: RecyclerView = findViewById(R.id.userListRecycleView)
 //        recyclerView.layoutManager = LinearLayoutManager(this)
