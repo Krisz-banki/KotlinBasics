@@ -32,6 +32,14 @@
         android:padding="12dp"
         android:layout_marginTop="32dp"
         />
+    <Button
+        android:id="@+id/openUserListButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Felhasználók megtekintése"
+        android:padding="12dp"
+        android:layout_marginTop="32dp"
+        />
 
 
 </LinearLayout>
