@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var openCalculatorButton: Button
     private lateinit var openWeatherButton: Button
     private lateinit var openUserListButton: Button
+    private lateinit var openRandomUserListButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         openGreetingButton = findViewById(R.id.openGreetingButton)
         openWeatherButton = findViewById(R.id.openWeatherButton)
         openUserListButton = findViewById(R.id.openUserListButton)
+        openRandomUserListButton = findViewById(R.id.openRandomUserListButton)
 
         openCalculatorButton.setOnClickListener{
         val intent = Intent(this, CalculatorActivity::class.java)
@@ -43,6 +45,10 @@ class MainActivity : AppCompatActivity() {
         }
         openUserListButton.setOnClickListener{
             val intent = Intent(this, UserListActivity::class.java)
+            startActivity(intent)
+        }
+        openRandomUserListButton.setOnClickListener{
+            val intent = Intent(this, RandomUserListActivity::class.java)
             startActivity(intent)
         }
     }
