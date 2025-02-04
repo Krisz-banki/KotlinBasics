@@ -2,19 +2,11 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.adapter.UserAdapter
 import com.example.myapplication.model.RandomUserResponse
-import com.example.myapplication.model.User
-import com.example.myapplication.model.WeatherResponse
 import com.example.myapplication.network.RandomUserService
-import com.example.myapplication.network.WeatherService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,6 +17,7 @@ class RandomUserListActivity  : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_random_users)
         fetchRandomUserList()
 
@@ -35,13 +28,13 @@ class RandomUserListActivity  : AppCompatActivity() {
 
     private fun fetchRandomUserList() {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://randomuser.me*")
+            .baseUrl("https://randomuser.me")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val RandomUserService = retrofit.create(RandomUserService::class.java)
+        val randomUserService = retrofit.create(RandomUserService::class.java)
 
-        val call = RandomUserService.getRandomUsers(10)
+        val call = randomUserService.getRandomUsers(10)
 
         call.enqueue(object : Callback<RandomUserResponse> {
             override fun onResponse(
