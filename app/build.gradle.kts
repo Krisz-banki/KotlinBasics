@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -57,4 +58,6 @@ dependencies {
     implementation(libs.retrofit.gson)
     implementation(libs.okhttp)
 
+    implementation(libs.glide)
+    kapt(libs.glide.compiler)
 }
