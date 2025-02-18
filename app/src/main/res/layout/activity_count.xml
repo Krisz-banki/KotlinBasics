@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/count"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CountActivity"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/countButton"
+        android:layout_marginTop="256dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Osztály létszám: "
+        android:layout_marginEnd="2dp"/>
+    <TextView
+        android:id="@+id/result"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eredmény: -"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+
+</LinearLayout>
