@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CountActivity : AppCompatActivity() {
     private lateinit var textviewCount: TextView
     private lateinit var countButton: Button
-    private val apiKey = "?count"
+    private val apiKey = "count"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,20 +29,14 @@ class CountActivity : AppCompatActivity() {
 
         countButton.setOnClickListener {
             lifecycleScope.launch {
-                try {
-                    val count = fetchCount()
-                    if (count != null) {
-                        textviewCount.text = "Count: $count"
-                    } else {
-                        textviewCount.text = "Hiba történt a számláló lekérésekor."
-                    }
-                } catch (e: Exception) {
-                    Log.e("HIBA: Count", "Hiba a számláló megjelenítésében")
-                    textviewCount.text = "Hiba történt a számláló megjelenítésében."
+                val count = fetchCount()
+                if(count !=null){
+                    textviewCount.text = "$count"
                 }
             }
         }
     }
+
 
     private suspend fun fetchCount(): Int? {
         val retrofit = Retrofit.Builder()
@@ -54,8 +48,8 @@ class CountActivity : AppCompatActivity() {
 
         return withContext(Dispatchers.IO) {
             try {
-                val response = countService.getCount(apiKey)
-                response.results
+                val response = countService.getCount("count")
+                response.tanulok_szama
             } catch (e: Exception) {
                 Log.e("CountActivity", "Error fetching count ", e)
                 null

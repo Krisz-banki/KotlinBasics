@@ -5,8 +5,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CountService {
-    @GET("/api.php")
+    @GET("api.php")
     suspend fun getCount(
-        @Query("results") results : String
+        @Query("count") count : String
     ): CountResponse
 }

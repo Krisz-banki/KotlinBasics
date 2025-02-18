@@ -1,5 +1,5 @@
 package com.example.myapplication.model
 
 data class CountResponse(
-        val results: Int
+        val tanulok_szama: Int
 )
