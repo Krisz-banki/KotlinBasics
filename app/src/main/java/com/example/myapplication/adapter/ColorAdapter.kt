@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinbasics.R
 import com.example.kotlinbasics.model.Color
+import com.example.myapplication.R
 
 class ColorAdapter(private val colors: List<Color>) : RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
 
