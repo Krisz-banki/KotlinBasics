@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kotlinbasics.ColorListActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var openRandomUserListButton: Button
     private lateinit var openCountButton: Button
     private lateinit var openColorListButton: Button
+    private lateinit var openBeerListButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 //            insets
 //        }
         openCalculatorButton = findViewById(R.id.openCalculatorButton)
+        openBeerListButton = findViewById(R.id.openBeerListButton)
         openGreetingButton = findViewById(R.id.openGreetingButton)
         openWeatherButton = findViewById(R.id.openWeatherButton)
         openUserListButton = findViewById(R.id.openUserListButton)
@@ -62,6 +63,10 @@ class MainActivity : AppCompatActivity() {
         }
         openRandomUserListButton.setOnClickListener{
             val intent = Intent(this, RandomUserListActivity::class.java)
+            startActivity(intent)
+        }
+        openBeerListButton.setOnClickListener{
+            val intent = Intent(this, BeerActivity::class.java)
             startActivity(intent)
         }
     }

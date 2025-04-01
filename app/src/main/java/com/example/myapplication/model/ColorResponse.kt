@@ -1,5 +1,4 @@
-
-package com.example.kotlinbasics.model
+package com.example.myapplication.model
 
 data class ColorResponse(
     val page: Int,

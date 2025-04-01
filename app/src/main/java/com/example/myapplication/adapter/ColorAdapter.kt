@@ -1,4 +1,4 @@
-package com.example.kotlinbasics.adapter
+package com.example.myapplication.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.kotlinbasics.model.Color
+import com.example.myapplication.model.Color
 
 
 class ColorAdapter(private val colors: List<Color>) : RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {

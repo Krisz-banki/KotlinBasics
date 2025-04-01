@@ -1,4 +1,4 @@
-package com.example.kotlinbasics
+package com.example.myapplication
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kotlinbasics.adapter.ColorAdapter
-import com.example.kotlinbasics.model.ColorResponse
-import com.example.kotlinbasics.network.ColorService
+import com.example.myapplication.adapter.ColorAdapter
+import com.example.myapplication.model.ColorResponse
+import com.example.myapplication.network.ColorService
 import com.example.myapplication.R
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,7 +19,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ColorListActivity : AppCompatActivity() {
+class ColorListActivity : AppCompatActivity(){
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
     private lateinit var fetchButton: Button
@@ -39,7 +39,7 @@ class ColorListActivity : AppCompatActivity() {
 
     private fun fetchColors() {
         progressBar.visibility = View.VISIBLE
-        
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://reqres.in/")
             .addConverterFactory(GsonConverterFactory.create())

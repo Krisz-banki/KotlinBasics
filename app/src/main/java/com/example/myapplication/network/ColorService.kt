@@ -1,6 +1,6 @@
-package com.example.kotlinbasics.network;
+package com.example.myapplication.network;
 
-import com.example.kotlinbasics.model.ColorResponse;
+import com.example.myapplication.model.ColorResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
