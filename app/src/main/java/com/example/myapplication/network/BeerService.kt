@@ -8,6 +8,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface BeerService {
-    @GET("beers?")
+    @GET("beers?page=1")
     suspend fun getBeers(): List<Beer>
 }

@@ -31,7 +31,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class BeerActivity  : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var fetchButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +38,6 @@ class BeerActivity  : AppCompatActivity() {
         setContentView(R.layout.activity_beer)
 
         recyclerView = findViewById(R.id.beerRecyclerView)
-        fetchButton = findViewById(R.id.fetchBeersButton)
         recyclerView.layoutManager = LinearLayoutManager(this)
         lifecycleScope.launch {
             try{
@@ -66,7 +64,7 @@ class BeerActivity  : AppCompatActivity() {
                 val response = BeerService.getBeers()
                 response
             } catch(e:Exception){
-                Log.e("BeerListActivity","Error fetching user list",e)
+                Log.e("BeerListActivity","Error fetching beer list",e)
                 null
             }
         }
